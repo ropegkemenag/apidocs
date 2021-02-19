@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "c8001ef4-b1fa-4c22-a6bf-1a4c82b5e0e9",
+		"name": "API SIMPEG V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "maiterdaftar@mai.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passwordterdaftar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PEGAWAI",
+			"item": [
+				{
+					"name": "Get Pegawai By NIP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE2MDQ0NzYwMTcsImV4cCI6MTYwNTA4MDgxN30.DmueA8_49yKwJjtO3c31LxP5f1MURfVfMhQ3AX7VOc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai/profil/199001202014031003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai",
+								"profil",
+								"199001202014031003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pendidikan Pegawai By NIP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE2MDQ0NzYwMTcsImV4cCI6MTYwNTA4MDgxN30.DmueA8_49yKwJjtO3c31LxP5f1MURfVfMhQ3AX7VOc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai/pendidikan/199001202014031003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai",
+								"pendidikan",
+								"199001202014031003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pekerjaan Pegawai By NIP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE2MDQ0NzYwMTcsImV4cCI6MTYwNTA4MDgxN30.DmueA8_49yKwJjtO3c31LxP5f1MURfVfMhQ3AX7VOc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai/pekerjaan/199001202014031003",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai",
+								"pekerjaan",
+								"199001202014031003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pegawai Under Satker",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjM3IiwidXNlcm5hbWUiOiJrYWx0aW1Aa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMDIxOTAxMDAwMDAwMDAiLCJpYXQiOjE2MDQ2NDU1MzQsImV4cCI6MTYwNTI1MDMzNH0.2ktX4PHXQ6IjPri47e8SKpPw_rI5bBnLBpW5PGOrwQc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pegawai Under Satker by Param",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE1Njk1NTcyNDcsImV4cCI6MTU3MDE2MjA0N30.fMzBXYePzMOGCVrXDIdJnKvD0Vc0qCP_-NfQI-gruA4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "satker",
+									"value": "000",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "limit",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pegawai By Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjM4IiwidXNlcm5hbWUiOiJiaW1hc2lzbGFtQGtlbWVuYWcuZ28uaWQiLCJrb2RlX3NhdGtlciI6IjAiLCJpYXQiOjE2MDY2Mzk1MzUsImV4cCI6MTYwNzI0NDMzNX0.0ygOMnS3MaBzv2yQLNTRy8upPIi2KLLw76M4BCizyn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/pegawai/type/225",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"pegawai",
+								"type",
+								"225"
+							]
+						},
+						"description": "https://api.kemenag.go.id/v1/pegawai/type/225\r\n\r\n225 is code of Pranata Komputer"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MASTER",
+			"item": [
+				{
+					"name": "Get Master SATKER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE2MDQ0NzYwMTcsImV4cCI6MTYwNTA4MDgxN30.DmueA8_49yKwJjtO3c31LxP5f1MURfVfMhQ3AX7VOc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/master/satker",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"master",
+								"satker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Master Jabatan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjIiLCJ1c2VybmFtZSI6ImFndXNAa2VtZW5hZy5nby5pZCIsImtvZGVfc2F0a2VyIjoiMTEwMTAwMDAwMDAwMDAiLCJpYXQiOjE2MDQ0NzYwMTcsImV4cCI6MTYwNTA4MDgxN30.DmueA8_49yKwJjtO3c31LxP5f1MURfVfMhQ3AX7VOc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.kemenag.go.id/v1/master/jabatan",
+							"protocol": "https",
+							"host": [
+								"api",
+								"kemenag",
+								"go",
+								"id"
+							],
+							"path": [
+								"v1",
+								"master",
+								"jabatan"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Single Sign On - API Kemenag v1 Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Single Sign On";
+    var mkdocs_page_input_path = "simpeg\\sso.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> API Kemenag v1 Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../datapegawai/">Data Pegawai</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../masterdata/">Master Data</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Single Sign On</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-registrasi-aplikasi">1. Registrasi Aplikasi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-setting-client">2. Setting Client</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-redirect-ke-sso">1. Redirect ke SSO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-respon-sso">2. Respon SSO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-verifikasi-token">3. Verifikasi Token</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-handle-respon">4. Handle Respon</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-full-code-php-codeigniter">Contoh Full Code (PHP - Codeigniter)</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">API Kemenag v1 Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Single Sign On</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="single-sign-on">Single Sign On</h1>
+<h3 id="1-registrasi-aplikasi">1. Registrasi Aplikasi</h3>
+<p>Silahkan masuk ke halaman console <code>api.kemenag.go.id</code> dan buat aplikasi. Anda akan mendapatkan APP Id yang digunakan sebagai identifikasi aplikasi Anda.</p>
+<p><img alt="Screenshot" src="../../img/sso.png" /></p>
+<h3 id="2-setting-client">2. Setting Client</h3>
+<p>Berisi data Jabatan Kementerian Agama.</p>
+<h4 id="1-redirect-ke-sso">1. Redirect ke SSO</h4>
+<p>Pastikan jika tidak ada session yang sudah terdaftar, alihkan ke halaman login SSO.
+<code>https://sso.kemenag.go.id?appid=[appid]</code></p>
+<h4 id="2-respon-sso">2. Respon SSO</h4>
+<p>SSO akan mengalihkan halaman/redirect ke URL Callback yang sudah didaftarkan dengan mengirimkan parameter token yang sudah digenerate.</p>
+<p><code>https://aplikasi.kemenag.go.id?token=[token]</code></p>
+<h4 id="3-verifikasi-token">3. Verifikasi Token</h4>
+<pre><code>GET /auth/verify HTTP/1.1
+Host: sso.kemenag.go.id
+Authorization: Bearer &lt;bearer token&gt;
+</code></pre>
+<p><strong>PHP - CURL</strong></p>
+<pre><code>&lt;?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL =&gt; 'https://sso.kemenag.go.id/auth/verify',
+  CURLOPT_RETURNTRANSFER =&gt; true,
+  CURLOPT_ENCODING =&gt; '',
+  CURLOPT_MAXREDIRS =&gt; 10,
+  CURLOPT_TIMEOUT =&gt; 0,
+  CURLOPT_FOLLOWLOCATION =&gt; true,
+  CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST =&gt; 'GET',
+  CURLOPT_HTTPHEADER =&gt; array(
+    'Authorization: Bearer &lt;Token&gt;'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+</code></pre>
+<h4 id="4-handle-respon">4. Handle Respon</h4>
+<p>SSO akan memberikan data pegawai yang login. Silahkan gunakan untuk dikonsumsi. Bisa menggunakan session atau apapun.</p>
+<pre><code>{
+    &quot;NIP&quot;: &quot;1955xxxxxx&quot;,
+    &quot;NIP_LAMA&quot;: &quot;1502xxxx&quot;,
+    &quot;NAMA&quot;: &quot;Dr. H. IMAMxxxx&quot;,
+    &quot;KODE_LEVEL_JABATAN&quot;: &quot;202&quot;,
+    &quot;KODE_JABATAN&quot;: &quot;&quot;,
+    &quot;JABATAN&quot;: &quot;&quot;,
+    &quot;FULL_JABATAN&quot;: &quot;&quot;,
+    &quot;PANGKAT&quot;: &quot;Pembina Utama Muda&quot;,
+    &quot;GOLONGAN&quot;: &quot;IV/c&quot;,
+    &quot;ROLE&quot;: &quot;Jabatan Fungsional Tertentu&quot;,
+    &quot;SSO_ROLE&quot;: &quot;&quot;, //role yang terdaftar pada API
+    &quot;KODE_SATKER_1&quot;: &quot;04401xxxxx&quot;,
+    &quot;SATKER_1&quot;: &quot;Program Studi Magister Pendidikan Agama Islam&quot;,
+    &quot;KODE_SATKER_2&quot;: &quot;04401xxxxx&quot;,
+    &quot;SATKER_2&quot;: &quot;Program Studi Magister Pendidikan Agama Islam&quot;,
+    &quot;KODE_SATKER_3&quot;: &quot;04401xxxxx&quot;,
+    &quot;SATKER_3&quot;: &quot;Pascasarjana&quot;,
+    &quot;KODE_SATKER_4&quot;: &quot;04400xxxxxx&quot;,
+    &quot;SATKER_4&quot;: &quot;IAIN Pekalongan&quot;,
+    &quot;KODE_SATKER_5&quot;: &quot;04000xxxxxx&quot;,
+    &quot;SATKER_5&quot;: &quot;Institut Agama Islam Negeri (IAIN)&quot;,
+    &quot;NO_HP&quot;: &quot;&quot;,
+    &quot;EMAIL&quot;: &quot;&quot;,
+}
+</code></pre>
+<h3 id="contoh-full-code-php-codeigniter">Contoh Full Code (PHP - Codeigniter)</h3>
+<pre><code>&lt;?php
+class Auth extends CI_Controller{
+
+  const SSO_URL     = 'https://sso.kemenag.go.id/auth';
+  const SSO_SIGNIN  = self::SSO_URL.'/signin';
+  const SSO_SIGNOUT = self::SSO_URL.'/signout';
+  const SSO_VERIFY  = self::SSO_URL.'/verify';
+  const APP_ID      = 'ID aplikasi yang terdaftar';
+
+  function index()
+  {
+    if (!$this-&gt;session-&gt;userdata('nip')) {
+      redirect(self::SSO_SIGNIN.'?appid='.self::APP_ID);
+    }else{
+      redirect('user/absen');
+    }
+  }
+
+  public function callback()
+  {
+    $token = $this-&gt;input-&gt;get('token') ?? '';
+    if($token){
+      $verify_url = self::SSO_VERIFY;
+      $ch = curl_init($verify_url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+      curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Authorization: Bearer '. $token]);
+
+      $response = curl_exec($ch);
+
+      if (curl_errno($ch)) {
+          echo &quot;CURL ERROR: &quot;.curl_error($ch);
+          curl_close($ch);
+          exit();
+      }
+      curl_close($ch);
+      $ret = json_decode($response, true);
+
+      if($ret['status'] == 200)
+      {
+        $pegawai = $ret['pegawai'];
+        $session_data = array(
+          'nip_lama'  =&gt; $pegawai['NIP_LAMA'],
+          'nip'       =&gt; $pegawai['NIP'],
+          'jabatan'   =&gt; $pegawai['KETERANGAN_JABATAN'],
+          'nama'      =&gt; $pegawai['NAMA'],
+          'photo'     =&gt; $pegawai['PHOTO'],
+          'sso_role'  =&gt; $pegawai['SSO_ROLE'],
+          'satker1'   =&gt; $pegawai['KODE_SATUAN_KERJA'],
+          'satker2'   =&gt; $pegawai['KODE_SATKER_2'],
+          'satker3'   =&gt; $pegawai['KODE_SATKER_3'],
+          'satker4'   =&gt; $pegawai['KODE_SATKER_4'],
+          'satker5'   =&gt; $pegawai['KODE_SATKER_5'],
+          'type'      =&gt; 'user',
+        );
+        $this-&gt;session-&gt;set_userdata($session_data);
+
+        //jika valid
+        //redirect('wellcomepage');
+      }else{
+        //jika tidak valid
+        //redirect('auth');
+      }
+    }
+    else
+    {
+      die('Something Wrong');
+    }
+  }
+
+    public function logout()
+    {
+       $this-&gt;session-&gt;sess_destroy();
+       redirect($this-&gt;SSO_SIGNOUT);
+    }
+
+    public function is_loggedin($value='')
+    {
+      if($this-&gt;session-&gt;userdata('nip'))
+      {
+        return true;
+      }
+
+      return false;
+    }
+
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../masterdata/" class="btn btn-neutral" title="Master Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../masterdata/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

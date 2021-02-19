@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Data Pegawai - API Kemenag v1 Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data Pegawai";
+    var mkdocs_page_input_path = "simpeg\\datapegawai.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> API Kemenag v1 Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Data Pegawai</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#get-all-pegawai">Get All Pegawai</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-filter-pegawai">Get Filter Pegawai</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameter">Parameter</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#respon">Respon</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-single-pegawai">Get Single Pegawai</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#respon_1">Respon</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-pedidikan-pegawai">Get Pedidikan Pegawai</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#respon_2">Respon</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-pekerjaan-pegawai">Get Pekerjaan Pegawai</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#respon_3">Respon</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../masterdata/">Master Data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sso/">Single Sign On</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">API Kemenag v1 Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Data Pegawai</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data-pegawai-kementerian-agama">Data Pegawai Kementerian Agama</h1>
+<p><strong>Important</strong></p>
+<pre><code>Setiap pengambilan data, wajib menggunakan Authorization Bearer Token
+</code></pre>
+<h2 id="get-all-pegawai">Get All Pegawai</h2>
+<p>Lorem markdownum amantes solane. Sua Graias tua <a href="http://tuaqui.com/">filia</a>
+quarta. Fabricator naides in lacrimis raptaque rogus: tenaci sanguine erat,
+sensurum tum aconiton haut; deum digiti, agitant. <em>Minoris ligno</em> somnusque,
+ostendisse mutatur luctus nota, ambiguis facto spes vereri.</p>
+<pre><code>GET /v1/pegawai HTTP/1.1
+Host: https://api.kemenag.go.id
+Content-Type: application/json
+Authorization: Bearer eyJ0xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h2 id="get-filter-pegawai">Get Filter Pegawai</h2>
+<pre><code>POST /v1/pegawai HTTP/1.1
+Host: https://api.kemenag.go.id
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJ0xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h6 id="parameter">Parameter</h6>
+<blockquote>
+<ul>
+<li><strong>satker</strong>: Kode Unit Kerja Atasan</li>
+<li><strong>limit</strong>: Limit</li>
+<li><strong>start</strong>: Mulai Pencarian</li>
+</ul>
+<p>Here's some example code:</p>
+<pre><code>return shell_exec("echo $input | $markdown_script");
+</code></pre>
+</blockquote>
+<h6 id="respon">Respon</h6>
+<pre><code>{
+  &quot;title&quot;: &quot;Data Pegawai dalam Satuan Kerja&quot;,
+  &quot;total&quot;: 594,
+  &quot;size&quot;: 44,
+  &quot;start&quot;: 550,
+  &quot;limit&quot;: 50,
+  &quot;data&quot;: [
+      {
+          &quot;NIP&quot;: &quot;1502xxxx&quot;,
+          &quot;NIP_BARU&quot;: &quot;1955xxxxxx&quot;,
+          &quot;NAMA&quot;: &quot;IMAMxxxxx&quot;,
+          &quot;NAMA_LENGKAP&quot;: &quot;Dr. H. IMAMxxxx&quot;,
+          &quot;AGAMA&quot;: &quot;Islam&quot;,
+          &quot;TEMPAT_LAHIR&quot;: &quot;Purbaxxxx&quot;,
+          &quot;TANGGAL_LAHIR&quot;: &quot;1955xxxxx&quot;,
+          &quot;JENIS_KELAMIN&quot;: 1,
+          &quot;PENDIDIKAN&quot;: &quot;S3 Studi Islam Pasca Sarjana Tahun 2011&quot;,
+          &quot;KODE_LEVEL_JABATAN&quot;: &quot;202&quot;,
+          &quot;PANGKAT&quot;: &quot;Pembina Utama Muda&quot;,
+          &quot;GOL_RUANG&quot;: &quot;IV/c&quot;,
+          &quot;TMT_SK&quot;: &quot;2000-04-01xxx&quot;,
+          &quot;MASAKERJA_TAHUN&quot;: 19,
+          &quot;MASAKERJA_BULAN&quot;: 1,
+          &quot;TIPE_JABATAN&quot;: &quot;Jabatan Fungsional Tertentu&quot;,
+          &quot;KODE_JABATAN&quot;: &quot;20203&quot;,
+          &quot;TAMPIL_JABATAN&quot;: &quot;Lektor Kepala&quot;,
+          &quot;TMT_JABATAN&quot;: &quot;2015-10-29 00:00:00&quot;,
+          &quot;KODE_SATKER_1&quot;: &quot;04401xxxxx&quot;,
+          &quot;SATKER_1&quot;: &quot;Program Studi Magister Pendidikan Agama Islam&quot;,
+          &quot;KODE_SATKER_2&quot;: &quot;04401xxxxx&quot;,
+          &quot;SATKER_2&quot;: &quot;Program Studi Magister Pendidikan Agama Islam&quot;,
+          &quot;KODE_SATKER_3&quot;: &quot;04401xxxxx&quot;,
+          &quot;SATKER_3&quot;: &quot;Pascasarjana&quot;,
+          &quot;KODE_SATKER_4&quot;: &quot;04400xxxxxx&quot;,
+          &quot;SATKER_4&quot;: &quot;IAIN Pekalongan&quot;,
+          &quot;KODE_SATKER_5&quot;: &quot;04000xxxxxx&quot;,
+          &quot;SATKER_5&quot;: &quot;Institut Agama Islam Negeri (IAIN)&quot;,
+          &quot;SATUAN_KERJA&quot;: &quot;Program Studi Magistexxxxxx&quot;,
+          &quot;STATUS_KAWIN&quot;: &quot;Kawin&quot;,
+          &quot;ALAMAT_1&quot;: &quot;Jl. KH. A.Dahlanxxxx&quot;,
+          &quot;ALAMAT_2&quot;: &quot;Tirto&quot;,
+          &quot;TELEPON&quot;: &quot;0285xxxx&quot;,
+          &quot;KAB_KOTA&quot;: &quot;Kota xxxx&quot;,
+          &quot;PROVINSI&quot;: &quot;Jawa xxxx&quot;,
+          &quot;KODE_POS&quot;: &quot;51xxx&quot;,
+          &quot;KODE_LOKASI&quot;: &quot;&quot;,
+          &quot;KODE_PANGKAT&quot;: &quot;43&quot;
+      }
+      .......
+  }
+</code></pre>
+<hr />
+<h2 id="get-single-pegawai">Get Single Pegawai</h2>
+<p>Mengambil data single pegawai bisa menggunakan method <code>GET</code> dengan parameter <code>NIP</code>. Misal <code>https://api.kemenag.go.id/v1/pegawai/profil/198000000</code></p>
+<pre><code>GET /v1/pegawai/profil/[nip] HTTP/1.1
+Host: https://api.kemenag.go.id
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJ0xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h5 id="respon_1">Respon</h5>
+<pre><code>{
+  &quot;status&quot;: true,
+  &quot;code&quot;: 200,
+  &quot;title&quot;: &quot;Profil Pegawai&quot;,
+  &quot;data&quot;: {
+    &quot;NIP&quot;: &quot;&quot;,
+    &quot;NIP_BARU&quot;: &quot;&quot;,
+    &quot;NAMA&quot;: &quot;&quot;,
+    &quot;NAMA_LENGKAP&quot;: &quot;&quot;,
+    &quot;AGAMA&quot;: &quot;&quot;,
+    &quot;TEMPAT_LAHIR&quot;: &quot;&quot;,
+    &quot;TANGGAL_LAHIR&quot;: &quot;&quot;,
+    &quot;JENIS_KELAMIN&quot;: ,
+    &quot;PENDIDIKAN&quot;: &quot;&quot;,
+    &quot;KODE_LEVEL_JABATAN&quot;: &quot;&quot;,
+    &quot;LEVEL_JABATAN&quot;: &quot;&quot;,
+    &quot;PANGKAT&quot;: &quot;&quot;,
+    &quot;GOL_RUANG&quot;: &quot;&quot;,
+    &quot;TMT_CPNS&quot;: &quot;&quot;,
+    &quot;TMT_PANGKAT&quot;: &quot;&quot;,
+    &quot;MASAKERJA_TAHUN&quot;: ,
+    &quot;MASAKERJA_BULAN&quot;: ,
+    &quot;TIPE_JABATAN&quot;: &quot;&quot;,
+    &quot;KODE_JABATAN&quot;: &quot;&quot;,
+    &quot;TAMPIL_JABATAN&quot;: &quot;&quot;,
+    &quot;TMT_JABATAN&quot;: &quot;&quot;,
+    &quot;KODE_SATKER_1&quot;: &quot;11070000000000&quot;,
+    &quot;SATKER_1&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+    &quot;KODE_SATKER_2&quot;: &quot;11070000000000&quot;,
+    &quot;SATKER_2&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+    &quot;KODE_SATKER_3&quot;: &quot;11070000000000&quot;,
+    &quot;SATKER_3&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+    &quot;KODE_SATKER_4&quot;: &quot;11070000000000&quot;,
+    &quot;SATKER_4&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+    &quot;KODE_SATKER_5&quot;: &quot;11000000000000&quot;,
+    &quot;SATKER_5&quot;: &quot;Universitas Islam Negeri (UIN)&quot;,
+    &quot;SATUAN_KERJA&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+    &quot;STATUS_KAWIN&quot;: &quot;Kawin&quot;,
+    &quot;ALAMAT_1&quot;: &quot;&quot;,
+    &quot;ALAMAT_2&quot;: &quot;&quot;,
+    &quot;TELEPON&quot;: &quot;&quot;,
+    &quot;KAB_KOTA&quot;: &quot;&quot;,
+    &quot;PROVINSI&quot;: &quot;&quot;,
+    &quot;KODE_POS&quot;: &quot;&quot;,
+    &quot;KODE_LOKASI&quot;: &quot;&quot;,
+    &quot;KODE_PANGKAT&quot;: &quot;&quot;
+  }
+}
+</code></pre>
+<hr />
+<h2 id="get-pedidikan-pegawai">Get Pedidikan Pegawai</h2>
+<p>Data pendidikan pegawai diambil tersendiri sesuai pengambilan berdasarkan NIP. Misal <code>https://api.kemenag.go.id/v1/pegawai/pendidikan/198000000</code></p>
+<pre><code>GET /v1/pegawai/pendidikan/[nip] HTTP/1.1
+Host: https://api.kemenag.go.id
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJ0xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h5 id="respon_2">Respon</h5>
+<pre><code>{
+    &quot;status&quot;: true,
+    &quot;code&quot;: 200,
+    &quot;title&quot;: &quot;Pendidikan Pegawai&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;NO_URUT&quot;: 1,
+            &quot;NIP&quot;: &quot;230004496&quot;,
+            &quot;NAMA_SEKOLAH&quot;: &quot;&quot;,
+            &quot;FAKULTAS_PENDIDIKAN&quot;: &quot;&quot;,
+            &quot;JURUSAN&quot;: &quot;Teknik Informatika&quot;,
+            &quot;TAHUN_LULUS&quot;: &quot;2013&quot;,
+            &quot;JENJANG_PENDIDIKAN&quot;: &quot;S2&quot;,
+            &quot;LOKASI_SEKOLAH&quot;: &quot;&quot;,
+            &quot;AKTA&quot;: &quot;&quot;
+        }
+    ]
+}
+</code></pre>
+<hr />
+<h2 id="get-pekerjaan-pegawai">Get Pekerjaan Pegawai</h2>
+<p>Data pekerjaan pegawai diambil tersendiri sesuai pengambilan berdasarkan NIP. Misal <code>https://api.kemenag.go.id/v1/pegawai/pekerjaan/198000000</code></p>
+<pre><code>GET /v1/pegawai/pekerjaan/[nip] HTTP/1.1
+Host: https://api.kemenag.go.id
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJ0xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h5 id="respon_3">Respon</h5>
+<pre><code>{
+    &quot;status&quot;: true,
+    &quot;code&quot;: 200,
+    &quot;title&quot;: &quot;Pekerjaan Pegawai&quot;,
+    &quot;data&quot;: {
+        &quot;pangkat&quot;: [
+            {
+                &quot;NIP&quot;: &quot;230004496&quot;,
+                &quot;NO_URUT&quot;: 1,
+                &quot;KODE_PANGKAT&quot;: &quot;32&quot;,
+                &quot;PANGKAT&quot;: &quot;Penata Muda Tk. I&quot;,
+                &quot;GOL_RUANG&quot;: &quot;III/b&quot;,
+                &quot;NO_SK&quot;: &quot;&quot;,
+                &quot;TGL_SK&quot;: &quot;1900-01-01 00:00:00&quot;,
+                &quot;TMT_SK&quot;: &quot;2014-03-01 00:00:00&quot;,
+                &quot;MK_TAHUN&quot;: 0,
+                &quot;MK_BULAN&quot;: 0,
+                &quot;KETERANGAN&quot;: &quot;&quot;
+            },
+            {
+                &quot;NIP&quot;: &quot;230004496&quot;,
+                &quot;NO_URUT&quot;: 2,
+                &quot;KODE_PANGKAT&quot;: &quot;32&quot;,
+                &quot;PANGKAT&quot;: &quot;Penata Muda Tk. I&quot;,
+                &quot;GOL_RUANG&quot;: &quot;III/b&quot;,
+                &quot;NO_SK&quot;: &quot;Un.07/KP.00.3/SK/384/P/2015&quot;,
+                &quot;TGL_SK&quot;: &quot;2015-10-05 00:00:00&quot;,
+                &quot;TMT_SK&quot;: &quot;2015-11-01 00:00:00&quot;,
+                &quot;MK_TAHUN&quot;: 1,
+                &quot;MK_BULAN&quot;: 8,
+                &quot;KETERANGAN&quot;: &quot;&quot;
+            }
+        ],
+        &quot;jabatan&quot;: [
+            {
+                &quot;NIP&quot;: &quot;230004496&quot;,
+                &quot;NO_URUT&quot;: 1,
+                &quot;KODE_JABATAN&quot;: &quot;20932&quot;,
+                &quot;JABATAN&quot;: &quot;Calon Dosen Asisten Ahli (Pengangkatan Pertama)&quot;,
+                &quot;KODE_BIDANG_STUDI&quot;: null,
+                &quot;BIDANG_STUDI&quot;: null,
+                &quot;KODE_SATUAN_KERJA&quot;: &quot;11070000000000&quot;,
+                &quot;SATUAN_KERJA&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;KETERANGAN_SATUAN_KERJA&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;NO_SK&quot;: &quot;&quot;,
+                &quot;TGL_SK&quot;: null,
+                &quot;TMT_SK&quot;: &quot;2014-03-01 00:00:00&quot;,
+                &quot;KODE_JABATAN_2&quot;: null,
+                &quot;JABATAN_2&quot;: null,
+                &quot;KODE_SATUAN_KERJA_2&quot;: &quot;11070000000000&quot;,
+                &quot;SATUAN_KERJA_2&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;KETERANGAN_SATUAN_KERJA_2&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;NO_SK_2&quot;: &quot;&quot;,
+                &quot;TGL_SK_2&quot;: null,
+                &quot;TMT_SK_2&quot;: null,
+                &quot;KETERANGAN&quot;: &quot;Calon Dosen pada UIN Sunan Ampel Surabaya&quot;,
+                &quot;KODE_PANGKAT&quot;: &quot;32&quot;,
+                &quot;PANGKAT&quot;: &quot;Penata Muda Tk. I&quot;,
+                &quot;GOL_RUANG&quot;: &quot;III/b&quot;
+            },
+            {
+                &quot;NIP&quot;: &quot;230004496&quot;,
+                &quot;NO_URUT&quot;: 2,
+                &quot;KODE_JABATAN&quot;: &quot;20208&quot;,
+                &quot;JABATAN&quot;: &quot;Asisten Ahli&quot;,
+                &quot;KODE_BIDANG_STUDI&quot;: &quot;976&quot;,
+                &quot;BIDANG_STUDI&quot;: &quot;Mata Kuliah Sistem Informasi &quot;,
+                &quot;KODE_SATUAN_KERJA&quot;: &quot;11070000000000&quot;,
+                &quot;SATUAN_KERJA&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;KETERANGAN_SATUAN_KERJA&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;NO_SK&quot;: &quot;Un.07/1/Kp.07.6/179/P/2015&quot;,
+                &quot;TGL_SK&quot;: &quot;2015-12-29 00:00:00&quot;,
+                &quot;TMT_SK&quot;: &quot;2016-01-01 00:00:00&quot;,
+                &quot;KODE_JABATAN_2&quot;: null,
+                &quot;JABATAN_2&quot;: null,
+                &quot;KODE_SATUAN_KERJA_2&quot;: &quot;11070000000000&quot;,
+                &quot;SATUAN_KERJA_2&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;KETERANGAN_SATUAN_KERJA_2&quot;: &quot;UIN Sunan Ampel Surabaya&quot;,
+                &quot;NO_SK_2&quot;: &quot;&quot;,
+                &quot;TGL_SK_2&quot;: &quot;2018-08-28 09:29:00&quot;,
+                &quot;TMT_SK_2&quot;: &quot;2018-08-28 09:29:00&quot;,
+                &quot;KETERANGAN&quot;: &quot;Assisten Ahli Mata Kuliah Sistem Cerdas, pada Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya&quot;,
+                &quot;KODE_PANGKAT&quot;: &quot;32&quot;,
+                &quot;PANGKAT&quot;: &quot;Penata Muda Tk. I&quot;,
+                &quot;GOL_RUANG&quot;: &quot;III/b&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../masterdata/" class="btn btn-neutral float-right" title="Master Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../authentication/" class="btn btn-neutral" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../authentication/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../masterdata/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
